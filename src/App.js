@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App" style={backgroundColor="blue"}>
-     krishna sahu 
+    <div className="App" >
+     krishna sahu  krishna krishna krishna 
     </div>
   );
 }
