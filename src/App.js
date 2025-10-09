@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
+import React, { useState } from "react";
+import Sidebar from "./components/sidebar";
+import TutorialList from "./components/TutorialList";
 
-function App() {
-  const [active, setActive] = useState(0);
-  const sidebarItems = [
-    { label: 'Dashboard', icon: '🏠' },
-    { label: 'Devices', icon: '🖥️' },
-    { label: 'Connections', icon: '🔗' },
-    { label: 'Settings', icon: '⚙️' }
-  ];
+const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <Sidebar
-        items={sidebarItems}
-        activeIndex={active}
-        onItemClick={setActive}
-      />
-      <div style={{ flex: 1, padding: 30 }}>
-        {/* Main content based on active sidebar item */}
-        <h1>{sidebarItems[active].label}</h1>
-        <p>Content for {sidebarItems[active].label}</p>
-      </div>
+    <div className="flex">
+      <Sidebar setSelectedCategory={setSelectedCategory} />
+      <TutorialList selectedCategory={selectedCategory} />
     </div>
   );
-}
+};
 
 export default App;
